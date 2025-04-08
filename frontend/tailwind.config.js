@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx}",  // 반드시 jsx 포함!
+    "./src/**/*.{js,jsx,tsx}",
   ],
   theme: {
     extend: {},
