@@ -5,7 +5,7 @@ export default function HomePage() {
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white px-4">
-            <h1 className="text-4xl font-bold mb-6">STAGE: FATE</h1>
+            <h1 className="text-4xl font-bold mb-6">STAGE🔸FATE</h1>
             <p className="mb-8 text-center text-lg">당신의 선택이 운명을 바꿉니다</p>
             <button
                 onClick={() => navigate('/stat')}

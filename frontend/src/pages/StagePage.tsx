@@ -105,11 +105,33 @@ export default function StagePage() {
                     </button>
                 </div>
             )}
+            {/* 기존 스탯 하단 텍스트 부분 교체 */}
+            <div className="mt-8 w-full max-w-xs space-y-4 text-sm text-gray-300">
+                <div>
+                    <p className="mb-1 text-red-400">HP: {stats.HP} / 100</p>
+                    <div className="w-full bg-gray-700 h-4 rounded">
+                        <div
+                            className="bg-red-500 h-4 rounded transition-all duration-300"
+                            style={{ width: `${(stats.HP / 100) * 100}%` }}
+                        />
+                    </div>
+                </div>
 
-            <div className="mt-8 text-sm text-gray-300">
-                <p>STR: {stats.STR} / INT: {stats.INT} / AGI: {stats.AGI}</p>
-                <p>HP: {stats.HP} / MP: {stats.MP}</p>
+                <div>
+                    <p className="mb-1 text-blue-400">MP: {stats.MP} / 50</p>
+                    <div className="w-full bg-gray-700 h-4 rounded">
+                        <div
+                            className="bg-blue-500 h-4 rounded transition-all duration-300"
+                            style={{ width: `${(stats.MP / 50) * 100}%` }}
+                        />
+                    </div>
+                </div>
+
+                <div className="pt-4">
+                    <p>STR: {stats.STR} / INT: {stats.INT} / AGI: {stats.AGI}</p>
+                </div>
             </div>
+
         </div>
     )
 }

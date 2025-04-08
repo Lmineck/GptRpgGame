@@ -1,3 +1,4 @@
+// src/pages/StatAllocationPage.tsx
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -34,7 +35,9 @@ export default function StatAllocationPage() {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white px-4">
             <h1 className="text-3xl font-bold mb-4">스탯을 분배하세요</h1>
-            <p className="mb-6">총 사용 가능 포인트: <span className="text-yellow-400 font-semibold">{MAX_POINTS}</span> | 남은: <span className="text-green-400 font-semibold">{remaining}</span></p>
+            <p className="mb-6">
+                총 포인트: <span className="text-yellow-400">{MAX_POINTS}</span> | 남은: <span className="text-green-400">{remaining}</span>
+            </p>
 
             <div className="space-y-4 w-full max-w-xs">
                 {(['STR', 'INT', 'AGI'] as (keyof Stats)[]).map((stat) => (
@@ -55,8 +58,20 @@ export default function StatAllocationPage() {
                 ))}
             </div>
 
-            <div className="mt-6">
-                <p className="text-sm text-gray-300">기본 체력: <b>100</b> / 마나: <b>50</b></p>
+            {/* 체력/마나 Progress Bar */}
+            <div className="w-full max-w-xs mt-6 space-y-4">
+                <div>
+                    <p className="text-sm mb-1 text-red-400">HP: 100 / 100</p>
+                    <div className="w-full bg-gray-700 h-4 rounded">
+                        <div className="bg-red-500 h-4 rounded w-full" />
+                    </div>
+                </div>
+                <div>
+                    <p className="text-sm mb-1 text-blue-400">MP: 50 / 50</p>
+                    <div className="w-full bg-gray-700 h-4 rounded">
+                        <div className="bg-blue-500 h-4 rounded w-full" />
+                    </div>
+                </div>
             </div>
 
             <button
